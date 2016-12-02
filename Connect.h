@@ -14,7 +14,7 @@ public:
 	void setCallBack(CALL_BACK_RECIEVE);
 	void checkRecieveEvent();
 	void writeCommand(uint8_t topic , uint8_t *data , uint8_t length);
-
+	uint8_t setMode(uint8_t mode, uint8_t numSensor);
 private:
 	CALL_BACK_RECIEVE;
 	Serial *call;
