@@ -29,6 +29,10 @@ void Connect::begin(Serial *serialCall){
 	this->call = serialCall;
 }
 
+uint8_t Connect::setMode(uint8_t mode, uint8_t numSensor){
+	return (mode|(numSensor<<1));
+}
+
 void Connect::writeCommand(uint8_t topic,uint8_t *data,uint8_t length){
 	uint8_t size = length+1+1; //length+topic+checksum
 	uint8_t buff[size];
