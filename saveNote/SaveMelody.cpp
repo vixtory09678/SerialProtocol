@@ -1,13 +1,13 @@
 #include "SaveMelody.h"
 
-void SaveMelody::addNote(int keyNote){
-	keyNote.push_back(keyNote);
+void SaveMelody::addNote(int key){
+	keyNote.push_back(key);
 }
 
-bool SaveMelody::getArayNote(int* arrayNote,int size){
-	if(size <= sizeNote){
-		for(int i = 0;i < sizeNote();i++){
-			arrayNote++ = getNote(i);
+bool SaveMelody::getArrayNote(int* arrayNote,int size){
+	if(size <= sizeNote()){
+		for(int i = 0;i < size;i++){
+			arrayNote[i] = getNote(i);
 		}
 		return true;
 	}
@@ -15,16 +15,17 @@ bool SaveMelody::getArayNote(int* arrayNote,int size){
 }
 
 int SaveMelody::getNote(int index){
-	return keyNote.get(index);
+	return keyNote.at(index);
 }
 
 uint8_t SaveMelody::getSizeRow(){
 	return (uint8_t)(sizeNote()-1/8) + 1;
 }
 
-uint8_t SaveMelody::getSizeColom(uint8_t currentRow){
-	if(currentRow == 0||currentRow>getSizeRow)
-		return 0
+uint8_t SaveMelody::getSizeColumn(int currentRow){
+	if(currentRow == 0||currentRow > getSizeRow()){
+		return 0;
+	}
 	if(currentRow < getSizeRow()){
 		return 8;
 	}else if(currentRow == getSizeRow()){
