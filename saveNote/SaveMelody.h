@@ -7,17 +7,17 @@
 class SaveMelody
 {
 public:
-	void addNote(int keyNote);
-	int* getArrayNote(int* arrayNote);
-	int getNode(int index);
+	void addNote(int key);
+	bool getArrayNote(int* arrayNote,int size);
+	int getNote(int index);
 	int sizeNote();
-	uint8_t getSizeColum();
+	uint8_t getSizeColumn(int);
 	uint8_t getSizeRow();
 	void clear();
 	bool isEmpty();
 
 private:
-	std::vector<int> keyNote;
+	vector<int> keyNote;
 };
 
 #endif
