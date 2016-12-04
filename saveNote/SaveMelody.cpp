@@ -19,7 +19,7 @@ int SaveMelody::getNote(int index){
 }
 
 uint8_t SaveMelody::getSizeRow(){
-	return (uint8_t)(sizeNote()-1/8) + 1;
+	return (uint8_t)((sizeNote()-1)/8) + 1;
 }
 
 uint8_t SaveMelody::getSizeColumn(int currentRow){
@@ -44,3 +44,12 @@ void SaveMelody::clear(){
 int SaveMelody::sizeNote(){
 	return keyNote.size();
 }
+
+vector<int> SaveMelody::getInstance(){
+	return keyNote;
+}
+
+void SaveMelody::copy(vector<int> instance){
+	keyNote.swap(instance);
+}
+
