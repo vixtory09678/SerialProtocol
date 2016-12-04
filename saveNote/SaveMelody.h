@@ -15,9 +15,12 @@ public:
 	uint8_t getSizeRow();
 	void clear();
 	bool isEmpty();
+	vector<int> getInstance();
+	void copy(vector<int> instance);
 
 private:
 	vector<int> keyNote;
 };
 
 #endif
+
